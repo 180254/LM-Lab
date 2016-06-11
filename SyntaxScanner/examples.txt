@@ -1,0 +1,77 @@
+--------------- zagnieżdżone nawiasy
+<start>        ::= <expression2>{; <expression2>}[;]
+<expression2>  ::= <expression1>{<operator><expression1>}
+<expression1>  ::= (<expression2>)|<fraction>
+<fraction>     ::= <integer>[.<digit0>{<digit0>}]
+<integer>      ::= 0|<digit1>{<digit0>}
+<digit0>       ::= 0|1|2|3|4|5|6|7|8|9
+<digit1>       ::= 1|2|3|4|5|6|7|8|9
+<operator>     ::= +|-|/|*|^
+
+(1.2*3)+5-(23.4+3)^(3*(0.02-(1.2*2+4)-1)); 8.2/4;
+
+--------------- bez zagnieżdzeń
+<start>        ::= <mExpression>{; <mExpression>}[;]
+<mExpression>  ::= <bExpression>{<operator><bExpression>}
+<bExpression>  ::= (<expression>)|<expression>
+<expression>   ::= [-]<fraction>{<operator><fraction>}
+<fraction>     ::= <integer>[.<digit0>{<digit0>}]
+<integer>      ::= 0|<digit1>{<digit0>}
+<digit0>       ::= 0|1|2|3|4|5|6|7|8|9
+<digit1>       ::= 1|2|3|4|5|6|7|8|9
+<operator>     ::= +|-|/|*|^
+
+(1.2*3)+5-(23.4+3)^3; 8.2/4;
+
+--------------- przykład z wykładu: arithmetic expressions
+E     ::= T{OT}
+T     ::= (E)|a|b
+O     ::= +|-|/|*|^
+
+(a+b)*(b-(a*b)-a*(a-(a)))
+
+--------------- przykład z wykładu: arithmetic expressions, bez nawiasow
+E     ::= T{OT}
+T     ::= a|b
+O     ::= +|-|/|*|^
+
+a+b*b-a*b-a*a-a
+
+--------------- przykład z wykładu: arithmetic expressions
+E ::= TE'
+E'::= +TE'|-TE'|\0
+T ::= FT'
+T'::= *FT'|FT'|\0
+F::= (E)|a|b
+
+(a+b)*(b-(a*b)-a*(a-(a)))
+
+--------------- zadanie6: A - FAILED
+
+S ::= W; Z
+Z ::= W; Z|\0
+W ::= P|POW
+P ::= R|(W)
+R ::= L|L.L
+L ::= C|CL
+C ::= 0|1|2|3|4|5|6|7|8|9
+O ::= *|:|+|-|^
+
+(1.2*3)+5-(23.4+3)^3; 8:13;
+
+--------------- zadanie6: B (A poprawione; left common i left recursion)
+--------------- ; i spacja na końcu! taka gramatyka.
+
+S  ::= W; Z
+Z  ::= W; Z|\0
+W  ::= PW'
+W' ::= OW|\0
+P  ::= R|(W)
+R  ::= LR'
+R' ::= .L|\0
+L  ::= CL'
+L' ::= L|\0
+C  ::= 0|1|2|3|4|5|6|7|8|9
+O  ::= *|:|+|-|^|/
+
+(1.2*3)+5-(23.4+3)^3; 8:13;

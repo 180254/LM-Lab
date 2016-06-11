@@ -1,0 +1,51 @@
+dot -Tpng tur.txt -o tur.png
+
+
+digraph G {
+	Q0  -> Q18 [label="Θ / -,-"];
+	Q0  -> Q1  [label="1 / Θ,R"];
+	Q0  -> Q2  [label="2 / Θ,R"];
+	Q0  -> Q5  [label="5 / Θ,R"];
+
+	Q1  -> Q7  [label="Θ / Θ,-"];
+	Q1  -> Q2  [label="1 / Θ,R"];
+	Q1  -> Q3  [label="2 / Θ,R"];
+	Q1  -> Q6  [label="5 / Θ,R"];
+
+	Q2  -> Q8  [label="Θ / Θ,-"];
+	Q2  -> Q3  [label="1 / Θ,R"];
+	Q2  -> Q4  [label="2 / Θ,R"];
+	Q2  -> Q17 [label="5 / Θ,-"];
+
+	Q3  -> Q9  [label="Θ / Θ,-"];
+	Q3  -> Q4  [label="1 / Θ,R"];
+	Q3  -> Q5  [label="2 / Θ,R"];
+	Q3  -> Q13 [label="5 / Θ,-"];
+
+	Q4  -> Q10 [label="Θ / Θ,-"];
+	Q4  -> Q5  [label="1 / Θ,R"];
+	Q4  -> Q6  [label="2 / Θ,R"];
+	Q4  -> Q14 [label="5 / Θ,-"];
+
+	Q5  -> Q11 [label="Θ / Θ,-"];
+	Q5  -> Q6  [label="1 / Θ,R"];
+	Q5  -> Q17 [label="2 / Θ,-"];
+	Q5  -> Q15 [label="5 / Θ,-"];
+
+	Q6  -> Q12  [label="Θ / Θ,-"];
+	Q6  -> Q17  [label="Θ / Θ,-"];
+	Q6  -> Q13  [label="Θ / Θ,-"];
+	Q6  -> Q16  [label="Θ / Θ,-"];
+
+	Q7  -> Q18  [label="Θ / 1,-"];
+	Q8  -> Q18  [label="Θ / 2,-"];
+	Q9  -> Q7   [label="Θ / 2,L"];
+	Q10 -> Q8   [label="Θ / 2,L"];
+	Q11 -> Q18  [label="Θ / 5,-"];
+	Q12 -> Q7   [label="Θ / 5,L"];
+
+	Q13 -> Q17   [label="Θ / 1,-"];
+	Q14 -> Q17   [label="Θ / 2,-"];
+	Q15 -> Q13   [label="Θ / 2,L"];
+	Q16 -> Q14   [label="Θ / 2,L"];
+}

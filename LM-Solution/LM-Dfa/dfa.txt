@@ -1,0 +1,51 @@
+digraph G {
+	Q0 -> Q1 [label="1"];
+	Q0 -> Q2 [label="2"];
+	Q0 -> Q5 [label="5"];
+	Q0 -> Q9 [label="9"];
+
+	Q1 -> Q2 [label="1"];
+	Q1 -> Q3 [label="2"];
+	Q1 -> Q6 [label="5"];
+	Q1 -> Q9 [label="9"];
+
+	Q2 -> Q3 [label="1"];
+	Q2 -> Q4 [label="2"];
+	Q2 -> Q7 [label="5"];
+	Q2 -> Q9 [label="9"];
+
+	Q3 -> Q4 [label="1"];
+	Q3 -> Q5 [label="2"];
+	Q3 -> Q8 [label="5"];
+	Q3 -> Q9 [label="9"];
+
+	Q4 -> Q5 [label="1"];
+	Q4 -> Q6 [label="2"];
+	Q4 -> Q8 [label="5"];
+	Q4 -> Q9 [label="9"];
+
+	Q5 -> Q6 [label="1"];
+	Q5 -> Q7 [label="2"];
+	Q5 -> Q8 [label="5"];
+	Q5 -> Q9 [label="9"];
+
+	Q6 -> Q7 [label="1"];
+	Q6 -> Q8 [label="2"];
+	Q6 -> Q8 [label="5"];
+	Q6 -> Q9 [label="9"];
+
+	Q7 -> Q1 [label="1"];
+	Q7 -> Q2 [label="2"];
+	Q7 -> Q5 [label="5"];
+	Q7 -> Q9 [label="9"];
+
+	Q8 -> Q1 [label="1"];
+	Q8 -> Q2 [label="2"];
+	Q8 -> Q5 [label="5"];
+	Q8 -> Q9 [label="9"];
+
+	Q9 -> Q1 [label="1"];
+	Q9 -> Q2 [label="2"];
+	Q9 -> Q5 [label="5"];
+	Q9 -> Q9 [label="9"];
+}

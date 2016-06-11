@@ -1,0 +1,25 @@
+body {
+    padding: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    display: block;
+    width: 550px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+button {
+    box-sizing: border-box;
+    width: 550px;
+    padding: 5px 10px;
+}
+
+#result {
+    text-align: center;
+    font-size: 3em;
+}
