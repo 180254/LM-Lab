@@ -14,6 +14,7 @@
         <module>LM-Regexp</module>
         <module>LM-Grammar5</module>
         <module>LM-Grammar6</module>
+        <module>LM-Somefix</module>
     </modules>
 
     <properties>
